@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:model2/PageOne.dart';
-import 'package:model2/PageTwo.dart';
-import 'package:model2/introduce.dart';
+import 'package:model2/InTro_Screen1.dart';
+import 'package:model2/Intro_Screen2.dart';
+import 'package:model2/Introduce_Screen.dart';
+import 'package:model2/Register_Screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: Introduce(),
+      home: introduceScreen(),
     );
   }
 }

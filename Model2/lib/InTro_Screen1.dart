@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class PageTwo extends StatelessWidget{
+class introScreen1 extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -11,9 +11,9 @@ class PageTwo extends StatelessWidget{
             SizedBox(height: 86),
 
             ClipRRect(
-              borderRadius: BorderRadius.circular(30),
-              child: Image.asset('assets/pictures/hai.png', height: 330,
-                width: 352),
+                borderRadius: BorderRadius.circular(30),
+              child: Image.asset('assets/pictures/mot.png', height: 330,
+                width: 352,),
             ),
 
             SizedBox(height: 37),
@@ -26,7 +26,7 @@ class PageTwo extends StatelessWidget{
                 children: [
                   Text('Mudah dalam bertransaksi,', style:
                   TextStyle(
-                      fontWeight: FontWeight.w700, fontSize: 21,
+                    fontWeight: FontWeight.w700, fontSize: 21,
                       fontFamily: 'Product Sans'
                   ),),
                   Text('degan Jumot', style:
@@ -46,12 +46,12 @@ class PageTwo extends StatelessWidget{
               //color: Colors.green,
               child: Column(
                 children: [
-                  Text('Jual beli bisa dilakukan secara cod agar dapat', style:
+                  Text('Bisnis jual beli menjangkau ke seluruh wilayah', style:
                   TextStyle(
                       fontWeight: FontWeight.w400, fontSize: 14,
                       fontFamily: 'Roboto'
                   ),),
-                  Text('mengecek barang yang akan kita beli', style:
+                  Text('di Indonesia', style:
                   TextStyle(
                       fontWeight: FontWeight.w400, fontSize: 14,
                       fontFamily: 'Roboto'

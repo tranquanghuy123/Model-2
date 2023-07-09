@@ -1,22 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:model2/PageOne.dart';
-import 'package:model2/PageThree.dart';
-import 'package:model2/PageTwo.dart';
+import 'package:model2/InTro_Screen1.dart';
+import 'package:model2/Intro_Screen3.dart';
+import 'package:model2/Intro_Screen2.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-class Introduce extends StatefulWidget{
+class introduceScreen extends StatefulWidget{
   @override
   State<StatefulWidget> createState() {
-   return _IntroduceState();
+   return _introduceScreenState();
   }
 }
-class _IntroduceState extends State<Introduce>{
+class _introduceScreenState extends State<introduceScreen>{
 
   PageController _controller = PageController();
   bool isShowKembaliButton = false;
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) => isShowKembaliButton = _controller.page! > 0);
 
@@ -36,9 +35,9 @@ class _IntroduceState extends State<Introduce>{
             controller: _controller,
 
             children: [
-              PageOne(),
-              PageTwo(),
-              PageThree(),
+              introScreen1(),
+              introScreen2(),
+              introScreen3(),
             ],
           ),
 
@@ -53,7 +52,7 @@ class _IntroduceState extends State<Introduce>{
                   visible: isShowKembaliButton,
                   child:  GestureDetector(
                   onTap: (){
-                    _controller.nextPage(duration: Duration(milliseconds: 500),
+                    _controller.previousPage(duration: Duration(milliseconds: 500),
                         curve: Curves.easeIn);
                   },
                   child: Text('Kembali', style:
@@ -70,9 +69,8 @@ class _IntroduceState extends State<Introduce>{
                 GestureDetector(
                   onTap: (){
 
-
                     _controller.nextPage(duration: const Duration(milliseconds: 500),
-                        curve: Curves.easeIn);
+                        curve: Curves.bounceIn);
                     setState(() {
                       isShowKembaliButton = true;
                     });
