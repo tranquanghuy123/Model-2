@@ -1,15 +1,17 @@
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class registerScreen extends StatefulWidget{
+class loginScreen extends StatefulWidget{
   @override
   State<StatefulWidget> createState() {
-    return _registerScreenState();
+    return _loginScreenState();
   }
 }
-class _registerScreenState extends State<registerScreen>{
 
-  /// show the password or not
-  bool _isObscure = true;
+class _loginScreenState extends State<loginScreen>{
+
+ bool _isObscure = true;
 
   @override
   Widget build(BuildContext context) {
@@ -18,44 +20,16 @@ class _registerScreenState extends State<registerScreen>{
 
     return Scaffold(
       body: Container(
-        //color: Colors.blue,
         padding: EdgeInsets.fromLTRB(30, 86, 30, 30),
         height: heightScreen,
         width: widthScreen,
         child: SingleChildScrollView(
           child: Column(
             children: [
-              Image.asset('assets/pictures/bon1.png', height: 330, width: 352),
 
-              SizedBox(height: 64),
+              Image.asset('assets/pictures/sau.png', height: 330, width: 352),
 
-              ///name (Nama Lengkap)
-              const SizedBox(
-                height: 52,
-                width: 354,
-                child: TextField(
-                  keyboardType: TextInputType.text,
-                  style: TextStyle(
-                    fontSize: 16, fontFamily: 'Montserrat',
-                  ),
-                  decoration: InputDecoration(
-                    hintText: 'Nama Lengkap',
-                    contentPadding: EdgeInsets.fromLTRB(20, 15, 0, 15),
-                      hintStyle: TextStyle(color: Color.fromARGB(255, 217, 217, 217),
-                          fontSize: 16, fontFamily:'Montserrat'),
-                    enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(width: 2, color: Colors.grey),
-                    borderRadius: BorderRadius.all(Radius.circular(10))),
-                    focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(width: 2, color: Colors.blue),
-                      borderRadius: BorderRadius.all(Radius.circular(10))
-                    )
-                  ),
-                ),
-              ),
-
-              SizedBox(height: 24),
-
+              SizedBox(height: 44),
 
               ///email
               const SizedBox(
@@ -70,33 +44,6 @@ class _registerScreenState extends State<registerScreen>{
                       hintText: 'Email',
                       contentPadding: EdgeInsets.fromLTRB(20, 15, 0, 15),
                       hintStyle: TextStyle(color: Color.fromARGB(255, 217, 217, 217),
-                      fontSize: 16, fontFamily:'Montserrat' ),
-                      enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(width: 2, color: Colors.grey),
-                          borderRadius: BorderRadius.all(Radius.circular(10))),
-                      focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(width: 2, color: Colors.blue),
-                          borderRadius: BorderRadius.all(Radius.circular(10))
-                      )
-                  ),
-                ),
-              ),
-
-              SizedBox(height: 24),
-
-              ///Nomor HP (số điện thoại)
-              const SizedBox(
-                height: 52,
-                width: 354,
-                child: TextField(
-                  keyboardType: TextInputType.number,
-                  style: TextStyle(
-                    fontSize: 16, fontFamily: 'Montserrat',
-                  ),
-                  decoration: InputDecoration(
-                      hintText: 'Nomor HP',
-                      contentPadding: EdgeInsets.fromLTRB(20, 15, 0, 15),
-                      hintStyle: TextStyle(color: Color.fromARGB(255, 217, 217, 217),
                           fontSize: 16, fontFamily:'Montserrat' ),
                       enabledBorder: OutlineInputBorder(
                           borderSide: BorderSide(width: 2, color: Colors.grey),
@@ -109,8 +56,8 @@ class _registerScreenState extends State<registerScreen>{
                 ),
               ),
 
+              SizedBox(height: 16),
 
-              SizedBox(height: 24),
 
               ///pasword
               SizedBox(
@@ -147,62 +94,41 @@ class _registerScreenState extends State<registerScreen>{
                 ),
               ),
 
+              SizedBox(height: 5),
+
+              ///Lupa password?
+              Container(
+                height: 18,
+                width: widthScreen,
+                //color: Colors.red,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Text('Lupa password?', style: TextStyle(
+                      color: Colors.black, fontSize: 14
+                    ),)
+                  ],
+                )
+              ),
 
               SizedBox(height: 24),
 
-              ///confirm pasword (Konfirmasi Password)
-              SizedBox(
-                height: 52,
-                width: 354,
-                child: TextField(
-                  obscureText: _isObscure,
-                  keyboardType: TextInputType.text,
-                  style: const TextStyle(
-                    fontSize: 16, fontFamily: 'Montserrat',
-                  ),
-                  decoration: InputDecoration(
-                    // this button is used to toggle the password visibility
-                      suffixIcon: IconButton(
-                          icon: Icon(
-                              _isObscure ? Icons.visibility : Icons.visibility_off),
-                          onPressed: () {
-                            setState(() {
-                              _isObscure = !_isObscure;
-                            });
-                          }),
-                      hintText: 'Konfirmasi Password',
-                      contentPadding: const EdgeInsets.fromLTRB(20, 15, 0, 15),
-                      hintStyle: const TextStyle(color: Color.fromARGB(255, 217, 217, 217),
-                          fontSize: 16, fontFamily:'Montserrat' ),
-                      enabledBorder: const OutlineInputBorder(
-                          borderSide: BorderSide(width: 2, color: Colors.grey),
-                          borderRadius: BorderRadius.all(Radius.circular(10))),
-                      focusedBorder: const OutlineInputBorder(
-                          borderSide: BorderSide(width: 2, color: Colors.blue),
-                          borderRadius: BorderRadius.all(Radius.circular(10))
-                      )
-                  ),
-                ),
-              ),
-
-              SizedBox(height: 41),
-
-              ///Mendaftar (đăng kí)
+              ///Masuk (login - dang nhap)
               TextButton(onPressed: (){},
                   style: TextButton.styleFrom(
-                      backgroundColor: Colors.blue,
+                      backgroundColor: Colors.lightBlue,
                       foregroundColor: Colors.white,
                       minimumSize: Size(354, 52),
-                      shape: const RoundedRectangleBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(10)),
-                      )),
-                  child: const Text('Mendaftar', style: TextStyle(
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(10)))
+
+                  ),
+                  child: Text('Masuk', style: TextStyle(
                       fontWeight: FontWeight.w700, fontSize: 15, fontFamily: 'Product Sans'
                   ),)
               ),
 
-              SizedBox(height: 40),
-
+              SizedBox(height: 38),
 
               ///thanh bar ----Atau daftar menggunakan----
               Container(
@@ -217,7 +143,7 @@ class _registerScreenState extends State<registerScreen>{
                     ),
 
                     SizedBox(width: 8),
-                    
+
                     Text('Atau daftar menggunakan', style: TextStyle(
                         color: Color.fromARGB(255, 199, 199, 199), fontSize: 11.968
                     ),),
@@ -229,14 +155,11 @@ class _registerScreenState extends State<registerScreen>{
                       width: 86,
                       color: Color.fromARGB(255, 199, 199, 199),
                     ),
-
-
                   ],
                 ),
               ),
 
-              SizedBox(height: 40),
-
+              SizedBox(height: 32),
 
               ///Google
               TextButton(onPressed: (){},
@@ -260,40 +183,36 @@ class _registerScreenState extends State<registerScreen>{
                   )
               ),
 
-              SizedBox(height: 49),
+              SizedBox(height: 33),
 
 
-              ///Ngày mai làm getdetructor để push vào screen login
+              ///chua co tai khoan- dang ki ngay (Belum punya akun? Mendaftar sekranag)
               Container(
                 height: 20,
                 width: 355,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text('Sudah punya akun? silahkan ', style: TextStyle(
+                    Text('Belum punya akun? ', style: TextStyle(
                         color: Colors.black, fontSize: 15
                     ),),
 
-                    Text('masuk', style: TextStyle(
+                    Text('Mendaftar', style: TextStyle(
                         color: Colors.blueAccent, fontSize: 15
+                    ),),
+                    Text('sekranag', style: TextStyle(
+                        color: Colors.black, fontSize: 15
                     ),),
 
                   ],
                 ),
               ),
 
-
-
-
-
-
-
-
-
             ],
           ),
         ),
       ),
+
     );
   }
 

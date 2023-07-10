@@ -71,7 +71,7 @@ class introScreen3 extends StatelessWidget{
                         borderRadius: BorderRadius.all(Radius.circular(10)))
 
                 ),
-                child: Text('Mask', style: TextStyle(
+                child: Text('Masuk', style: TextStyle(
                   fontWeight: FontWeight.w700, fontSize: 15, fontFamily: 'Product Sans'
                 ),)
             ),
