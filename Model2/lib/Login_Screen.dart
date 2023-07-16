@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:model2/Register_Screen.dart';
@@ -12,6 +13,7 @@ class loginScreen extends StatefulWidget {
 
 class _loginScreenState extends State<loginScreen> {
 
+
   ///Form key
   final _formkey = GlobalKey<FormState>();
 
@@ -21,6 +23,12 @@ class _loginScreenState extends State<loginScreen> {
   ///Controller
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
+
+  void signUserIn() async {
+    await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: _emailController.text,
+        password: _passwordController.text);
+  }
 
     @override
     void dispose() {
@@ -164,7 +172,7 @@ class _loginScreenState extends State<loginScreen> {
                 ///Masuk (login - dang nhap)
                 TextButton(
                     onPressed: () {
-                      if (_formkey.currentState!.validate()) {
+                      /*if (_formkey.currentState!.validate()) {
                         setState(() {
                           Fluttertoast.showToast(
                               msg: 'Login success!',
@@ -175,7 +183,8 @@ class _loginScreenState extends State<loginScreen> {
                               textColor: Colors.black,
                               fontSize: 15);
                         });
-                      }
+                      } */
+                      signUserIn();
                     },
                     style: TextButton.styleFrom(
                         backgroundColor: Colors.lightBlue,

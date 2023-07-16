@@ -1,16 +1,2 @@
-# model2
-
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# 17/6/2023
+Hoàn thành tất cả màn hình tại https://www.figma.com/file/IlUgXxx7xgLtXy34a9npmA/Login-screen-%7C-UI-design-of-mobile-app-(Community)?type=design&node-id=0-1&mode=design&t=pebrpDtlZKL5ilvp-0
